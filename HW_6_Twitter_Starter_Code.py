@@ -213,8 +213,10 @@ def find_most_common_cooccurring_hashtag(tweet_data, hashtag_to_ignore):
             if f"#{tag['text'].lower()}" != hashtag_to_ignore.lower():
                 # print(tag['text'])
                 hashtag_list.append(f"{tag['text'].lower()}")
+                #removed hashtag from appended item because autograded was checking the term without the hashtag.
 
     return Counter(hashtag_list).most_common()[0][0]
+
 
     ''' Hint: In case you're confused about the hashtag_to_ignore 
     parameter, we want to ignore the hashtag we queried because it would 
